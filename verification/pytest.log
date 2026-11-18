@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.20, pytest-8.3.2, pluggy-1.7.0 -- /Users/sohbetdovranov/Documents/ChatGPT/udacity-mentor-work/work/fastapi-resubmission/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/sohbetdovranov/Documents/ChatGPT/udacity-mentor-work/work/fastapi-resubmission/repo
+configfile: pytest.ini
+plugins: anyio-4.16.0
+collecting ... collected 9 items
+
+test_ml.py::test_process_data_shapes_and_labels PASSED                   [ 11%]
+test_ml.py::test_train_model_returns_random_forest PASSED                [ 22%]
+test_ml.py::test_inference_returns_binary_predictions PASSED             [ 33%]
+test_ml.py::test_compute_model_metrics_exact_values PASSED               [ 44%]
+test_ml.py::test_save_and_load_model_roundtrip PASSED                    [ 55%]
+test_ml.py::test_performance_on_categorical_slice_returns_valid_metrics PASSED [ 66%]
+test_ml.py::test_api_get_root PASSED                                     [ 77%]
+test_ml.py::test_api_post_predicts_low_income PASSED                     [ 88%]
+test_ml.py::test_api_post_predicts_high_income PASSED                    [100%]
+
+============================== 9 passed in 31.94s ==============================

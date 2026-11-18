@@ -85,6 +85,24 @@ Result: <=50K
 
 `.github/workflows/manual.yml` installs `requirements.txt` on Python 3.10. It then runs `flake8 .` (configured in `setup.cfg`; any error fails the build) and `pytest test_ml.py -v` on every push and pull request to `main` or `master`.
 
+### Protected deployment branch — resubmission November 18, 2026
+
+An active branch-protection rule now targets `main`. It requires the GitHub Actions
+check **build (3.10)** to succeed, requires the branch to be up to date before
+merging, and applies to administrators. Force pushes and branch deletion remain
+disabled. Render's **After CI Checks Pass** deployment gate remains in place.
+
+The enabled rule is shown in [screenshots/branch_protection.jpg](screenshots/branch_protection.jpg).
+The GitHub API responses in [verification/branch-protection.json](verification/branch-protection.json)
+and [verification/branch-state.json](verification/branch-state.json) were captured
+after saving the rule. The latter reports `protected: true` at the original
+reviewed source commit `7fe63b28700da76a1a8281df0c2834d85544e220`.
+
+The source passed all nine tests again on Python 3.10.20, and flake8 reported zero
+errors. The live POST returned HTTP 200 and `>50K`; the live root GET screenshot
+was refreshed. Logs are in `verification/`. This resubmission adds the missing
+protection and its evidence; model and API behavior are unchanged.
+
 ## Continuous deployment (Render)
 
 The API runs as a Render web service connected to this GitHub repository:
