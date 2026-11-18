@@ -1,0 +1,3 @@
+POST https://census-fastapi-ml-pipeline.onrender.com/data/
+Status Code: 200
+Result: >50K
